@@ -16,6 +16,8 @@
 		B44BF3CD2989B9400002B220 /* RandomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44BF3CC2989B9400002B220 /* RandomTests.swift */; };
 		B44BF3ED2989BD3E0002B220 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = B44BF3EC2989BD3E0002B220 /* ComposableArchitecture */; };
 		B44BF3F02989BD5E0002B220 /* Microya in Frameworks */ = {isa = PBXBuildFile; productRef = B44BF3EF2989BD5E0002B220 /* Microya */; };
+		B44BF3F32989BEFC0002B220 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44BF3F22989BEFC0002B220 /* User.swift */; };
+		B44BF3F52989BFE60002B220 /* ApiCollectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44BF3F42989BFE60002B220 /* ApiCollectionResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		B44BF3C22989B9400002B220 /* Random.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Random.xcdatamodel; sourceTree = "<group>"; };
 		B44BF3C82989B9400002B220 /* RandomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B44BF3CC2989B9400002B220 /* RandomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTests.swift; sourceTree = "<group>"; };
+		B44BF3F22989BEFC0002B220 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B44BF3F42989BFE60002B220 /* ApiCollectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCollectionResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,7 @@
 		B44BF3E82989BB700002B220 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				B44BF3F12989BEF60002B220 /* Models */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -153,6 +158,15 @@
 				B44BF3B62989B9400002B220 /* RandomApp.swift */,
 			);
 			path = MainView;
+			sourceTree = "<group>";
+		};
+		B44BF3F12989BEF60002B220 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B44BF3F42989BFE60002B220 /* ApiCollectionResponse.swift */,
+				B44BF3F22989BEFC0002B220 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +280,8 @@
 				B44BF3C32989B9400002B220 /* Random.xcdatamodeld in Sources */,
 				B44BF3C02989B9400002B220 /* Persistence.swift in Sources */,
 				B44BF3B92989B9400002B220 /* ContentView.swift in Sources */,
+				B44BF3F52989BFE60002B220 /* ApiCollectionResponse.swift in Sources */,
+				B44BF3F32989BEFC0002B220 /* User.swift in Sources */,
 				B44BF3B72989B9400002B220 /* RandomApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
