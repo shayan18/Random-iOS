@@ -14,6 +14,8 @@
 		B44BF3C02989B9400002B220 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44BF3BF2989B9400002B220 /* Persistence.swift */; };
 		B44BF3C32989B9400002B220 /* Random.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B44BF3C12989B9400002B220 /* Random.xcdatamodeld */; };
 		B44BF3CD2989B9400002B220 /* RandomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44BF3CC2989B9400002B220 /* RandomTests.swift */; };
+		B44BF3ED2989BD3E0002B220 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = B44BF3EC2989BD3E0002B220 /* ComposableArchitecture */; };
+		B44BF3F02989BD5E0002B220 /* Microya in Frameworks */ = {isa = PBXBuildFile; productRef = B44BF3EF2989BD5E0002B220 /* Microya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B44BF3ED2989BD3E0002B220 /* ComposableArchitecture in Frameworks */,
+				B44BF3F02989BD5E0002B220 /* Microya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +171,10 @@
 			dependencies = (
 			);
 			name = Random;
+			packageProductDependencies = (
+				B44BF3EC2989BD3E0002B220 /* ComposableArchitecture */,
+				B44BF3EF2989BD5E0002B220 /* Microya */,
+			);
 			productName = Random;
 			productReference = B44BF3B32989B9400002B220 /* Random.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +225,10 @@
 				Base,
 			);
 			mainGroup = B44BF3AA2989B9400002B220;
+			packageReferences = (
+				B44BF3EB2989BD3E0002B220 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				B44BF3EE2989BD5E0002B220 /* XCRemoteSwiftPackageReference "Microya" */,
+			);
 			productRefGroup = B44BF3B42989B9400002B220 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -520,6 +532,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B44BF3EB2989BD3E0002B220 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+		B44BF3EE2989BD5E0002B220 /* XCRemoteSwiftPackageReference "Microya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/FlineDev/Microya/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B44BF3EC2989BD3E0002B220 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B44BF3EB2989BD3E0002B220 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		B44BF3EF2989BD5E0002B220 /* Microya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B44BF3EE2989BD5E0002B220 /* XCRemoteSwiftPackageReference "Microya" */;
+			productName = Microya;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		B44BF3C12989B9400002B220 /* Random.xcdatamodeld */ = {
