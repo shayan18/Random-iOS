@@ -6,7 +6,7 @@
 //
 
 /// The top level response structure of all endpoints providing body data.
-struct ApiCollectionResponse<T: Decodable>: Decodable {
+struct ApiCollectionResponse<T: Decodable & Equatable>: Decodable, Equatable {
     /// The responses 'primary data' where the expected data type differs from endpoint to endpoint, thus it's provided as a generic type. Required.
     let results: [T]
     
@@ -14,7 +14,7 @@ struct ApiCollectionResponse<T: Decodable>: Decodable {
     let info: Info
 }
 
-struct Info: Decodable {
+struct Info: Decodable, Equatable {
     let results: Int
     let page: Int
 }
