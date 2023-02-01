@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B417C365298AB88100E4BCB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417C364298AB88100E4BCB7 /* SceneDelegate.swift */; };
 		B417C367298AB91A00E4BCB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417C366298AB91A00E4BCB7 /* AppDelegate.swift */; };
-		B44BF3B72989B9400002B220 /* RandomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44BF3B62989B9400002B220 /* RandomApp.swift */; };
+		B44BF3B72989B9400002B220 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44BF3B62989B9400002B220 /* MainView.swift */; };
 		B44BF3B92989B9400002B220 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44BF3B82989B9400002B220 /* AppView.swift */; };
 		B44BF3BB2989B9400002B220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44BF3BA2989B9400002B220 /* Assets.xcassets */; };
 		B44BF3BE2989B9400002B220 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44BF3BD2989B9400002B220 /* Preview Assets.xcassets */; };
@@ -34,6 +34,9 @@
 		B4556C7F298A96AE00492A10 /* UserListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4556C7E298A96AE00492A10 /* UserListStore.swift */; };
 		B4556C81298A97A700492A10 /* AppEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4556C80298A97A700492A10 /* AppEnv.swift */; };
 		B4556C83298AAA1A00492A10 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4556C82298AAA1A00492A10 /* AppError.swift */; };
+		B4812A3D298AE77E008AE0F5 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4812A3C298AE77E008AE0F5 /* AppReducer.swift */; };
+		B4812A3F298AF0F8008AE0F5 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4812A3E298AF0F8008AE0F5 /* AppConstants.swift */; };
+		B4812A41298AF224008AE0F5 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4812A40298AF224008AE0F5 /* Cancellable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +54,7 @@
 		B417C366298AB91A00E4BCB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B43C4626298ABE6700873D92 /* Random-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Random-Info.plist"; sourceTree = "<group>"; };
 		B44BF3B32989B9400002B220 /* Random.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Random.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B44BF3B62989B9400002B220 /* RandomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomApp.swift; sourceTree = "<group>"; };
+		B44BF3B62989B9400002B220 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B44BF3B82989B9400002B220 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		B44BF3BA2989B9400002B220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B44BF3BD2989B9400002B220 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -75,6 +78,9 @@
 		B4556C7E298A96AE00492A10 /* UserListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListStore.swift; sourceTree = "<group>"; };
 		B4556C80298A97A700492A10 /* AppEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnv.swift; sourceTree = "<group>"; };
 		B4556C82298AAA1A00492A10 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		B4812A3C298AE77E008AE0F5 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		B4812A3E298AF0F8008AE0F5 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		B4812A40298AF224008AE0F5 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +206,7 @@
 				B44BF3BF2989B9400002B220 /* Persistence.swift */,
 				B44BF3B82989B9400002B220 /* AppView.swift */,
 				B4556C77298A948500492A10 /* AppStore.swift */,
+				B4812A3C298AE77E008AE0F5 /* AppReducer.swift */,
 				B4556C80298A97A700492A10 /* AppEnv.swift */,
 			);
 			path = AppView;
@@ -208,7 +215,7 @@
 		B44BF3EA2989BBC30002B220 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				B44BF3B62989B9400002B220 /* RandomApp.swift */,
+				B44BF3B62989B9400002B220 /* MainView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -263,6 +270,8 @@
 			isa = PBXGroup;
 			children = (
 				B4556C82298AAA1A00492A10 /* AppError.swift */,
+				B4812A3E298AF0F8008AE0F5 /* AppConstants.swift */,
+				B4812A40298AF224008AE0F5 /* Cancellable.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -378,12 +387,14 @@
 				B44BF3C32989B9400002B220 /* Random.xcdatamodeld in Sources */,
 				B4556C73298A8A8F00492A10 /* UserStore.swift in Sources */,
 				B4556C83298AAA1A00492A10 /* AppError.swift in Sources */,
+				B4812A3F298AF0F8008AE0F5 /* AppConstants.swift in Sources */,
 				B4556C7D298A96A700492A10 /* UserListReducer.swift in Sources */,
 				B4556C81298A97A700492A10 /* AppEnv.swift in Sources */,
 				B44BF3C02989B9400002B220 /* Persistence.swift in Sources */,
 				B4556C75298A8D9300492A10 /* DesignConstants.swift in Sources */,
 				B44BF3F92989CD200002B220 /* Page.swift in Sources */,
 				B417C367298AB91A00E4BCB7 /* AppDelegate.swift in Sources */,
+				B4812A3D298AE77E008AE0F5 /* AppReducer.swift in Sources */,
 				B4556C7F298A96AE00492A10 /* UserListStore.swift in Sources */,
 				B44BF3F72989CC970002B220 /* RandomUserEndPoint.swift in Sources */,
 				B44BF3B92989B9400002B220 /* AppView.swift in Sources */,
@@ -394,7 +405,8 @@
 				B4556C71298A8A8200492A10 /* UserView.swift in Sources */,
 				B417C365298AB88100E4BCB7 /* SceneDelegate.swift in Sources */,
 				B44BF3F32989BEFC0002B220 /* User.swift in Sources */,
-				B44BF3B72989B9400002B220 /* RandomApp.swift in Sources */,
+				B4812A41298AF224008AE0F5 /* Cancellable.swift in Sources */,
+				B44BF3B72989B9400002B220 /* MainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,6 @@ import Foundation
 
 struct AppState: Equatable {
   var userListState: UserListState?
-  
 }
 
 enum AppAction: Equatable {

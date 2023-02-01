@@ -6,7 +6,7 @@
 //
 
 /// Specifies the requests slice of objects in a list endpoint.
-struct Page {
+struct Page: Equatable {
     /// The page num.
     let num: Int
     
