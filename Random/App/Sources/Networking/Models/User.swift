@@ -5,17 +5,22 @@
 //  Created by Shayan Ali on 01.02.23.
 //
 
+import Foundation
+
 /// The user response object.
-struct User: Decodable {
-    /// The name of user.
-    let name: Name
-    
-    /// The user email address.
-    let email: String
+struct User: Decodable, Equatable {
+  /// The unique identifier for the given object. Required.
+  let id = UUID()
+  
+  /// The name of user.
+  let name: Name
+  
+  /// The user email address.
+  let email: String
 }
 
 /// The user name object.
-struct Name: Decodable {
-    let first: String
-    let last: String
+struct Name: Decodable, Equatable {
+  let first: String
+  let last: String
 }
