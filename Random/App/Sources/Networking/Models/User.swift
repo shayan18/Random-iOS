@@ -8,7 +8,7 @@
 import Foundation
 
 /// The user response object.
-struct User: Decodable, Equatable {
+struct User: Decodable, Equatable, Identifiable {
   /// The unique identifier for the given object. Required.
   let id = UUID()
   

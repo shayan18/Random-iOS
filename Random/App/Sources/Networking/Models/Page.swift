@@ -8,7 +8,7 @@
 /// Specifies the requests slice of objects in a list endpoint.
 struct Page: Equatable {
     /// The page num.
-    let num: Int
+    var num: Int
     
     /// The number of items requested.
     var items: Int

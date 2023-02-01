@@ -37,6 +37,7 @@
 		B4812A3D298AE77E008AE0F5 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4812A3C298AE77E008AE0F5 /* AppReducer.swift */; };
 		B4812A3F298AF0F8008AE0F5 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4812A3E298AF0F8008AE0F5 /* AppConstants.swift */; };
 		B4812A41298AF224008AE0F5 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4812A40298AF224008AE0F5 /* Cancellable.swift */; };
+		B4812A45298B22F1008AE0F5 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4812A44298B22F1008AE0F5 /* ActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		B4812A3C298AE77E008AE0F5 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		B4812A3E298AF0F8008AE0F5 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		B4812A40298AF224008AE0F5 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
+		B4812A44298B22F1008AE0F5 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 		B44BF3E72989BB680002B220 /* Design */ = {
 			isa = PBXGroup;
 			children = (
+				B4812A46298B2300008AE0F5 /* Representables */,
 				B4556C6F298A8A6700492A10 /* Components */,
 				B4556C76298A8E4600492A10 /* Shared */,
 			);
@@ -274,6 +277,14 @@
 				B4812A40298AF224008AE0F5 /* Cancellable.swift */,
 			);
 			path = Global;
+			sourceTree = "<group>";
+		};
+		B4812A46298B2300008AE0F5 /* Representables */ = {
+			isa = PBXGroup;
+			children = (
+				B4812A44298B22F1008AE0F5 /* ActivityIndicator.swift */,
+			);
+			path = Representables;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +408,7 @@
 				B4812A3D298AE77E008AE0F5 /* AppReducer.swift in Sources */,
 				B4556C7F298A96AE00492A10 /* UserListStore.swift in Sources */,
 				B44BF3F72989CC970002B220 /* RandomUserEndPoint.swift in Sources */,
+				B4812A45298B22F1008AE0F5 /* ActivityIndicator.swift in Sources */,
 				B44BF3B92989B9400002B220 /* AppView.swift in Sources */,
 				B4556C7B298A967500492A10 /* UserListView.swift in Sources */,
 				B44BF3F52989BFE60002B220 /* ApiCollectionResponse.swift in Sources */,
@@ -553,7 +565,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
-				DEVELOPMENT_TEAM = 9TH46F6KBN;
+				DEVELOPMENT_TEAM = U9X938S23Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Random-Info.plist";
@@ -566,7 +578,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.Random;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.blu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -582,7 +594,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
-				DEVELOPMENT_TEAM = 9TH46F6KBN;
+				DEVELOPMENT_TEAM = U9X938S23Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Random-Info.plist";
@@ -595,7 +607,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.app.Random;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.blu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
