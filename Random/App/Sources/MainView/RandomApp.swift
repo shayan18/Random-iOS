@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 14.0, *)
 @main
 struct RandomApp: App {
     let persistenceController = PersistenceController.shared
