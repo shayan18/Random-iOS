@@ -21,6 +21,8 @@
 		B44BF3F72989CC970002B220 /* RandomUserEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44BF3F62989CC970002B220 /* RandomUserEndPoint.swift */; };
 		B44BF3F92989CD200002B220 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44BF3F82989CD200002B220 /* Page.swift */; };
 		B44BF3FB2989CF1B0002B220 /* RandomUserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44BF3FA2989CF1B0002B220 /* RandomUserError.swift */; };
+		B4556C6C298A79A900492A10 /* RandomUsersApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4556C6B298A79A900492A10 /* RandomUsersApiTests.swift */; };
+		B4556C6E298A79BA00492A10 /* TestGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4556C6D298A79BA00492A10 /* TestGlobals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		B44BF3F62989CC970002B220 /* RandomUserEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserEndPoint.swift; sourceTree = "<group>"; };
 		B44BF3F82989CD200002B220 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		B44BF3FA2989CF1B0002B220 /* RandomUserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserError.swift; sourceTree = "<group>"; };
+		B4556C6B298A79A900492A10 /* RandomUsersApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUsersApiTests.swift; sourceTree = "<group>"; };
+		B4556C6D298A79BA00492A10 /* TestGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGlobals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				B44BF3CC2989B9400002B220 /* RandomTests.swift */,
+				B4556C6B298A79A900492A10 /* RandomUsersApiTests.swift */,
+				B4556C6D298A79BA00492A10 /* TestGlobals.swift */,
 			);
 			path = RandomTests;
 			sourceTree = "<group>";
@@ -310,7 +316,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4556C6C298A79A900492A10 /* RandomUsersApiTests.swift in Sources */,
 				B44BF3CD2989B9400002B220 /* RandomTests.swift in Sources */,
+				B4556C6E298A79BA00492A10 /* TestGlobals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
