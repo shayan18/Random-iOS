@@ -6,6 +6,6 @@
 //
 
 /// Represents a single error with some additional information on what's wrong.
-struct RandomUserError: Decodable {
+struct RandomUserError: Decodable, Equatable {
    let error: String
 }
