@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B417C365298AB88100E4BCB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417C364298AB88100E4BCB7 /* SceneDelegate.swift */; };
+		B417C367298AB91A00E4BCB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417C366298AB91A00E4BCB7 /* AppDelegate.swift */; };
 		B44BF3B72989B9400002B220 /* RandomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44BF3B62989B9400002B220 /* RandomApp.swift */; };
 		B44BF3B92989B9400002B220 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44BF3B82989B9400002B220 /* AppView.swift */; };
 		B44BF3BB2989B9400002B220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44BF3BA2989B9400002B220 /* Assets.xcassets */; };
@@ -45,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B417C364298AB88100E4BCB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B417C366298AB91A00E4BCB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B43C4626298ABE6700873D92 /* Random-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Random-Info.plist"; sourceTree = "<group>"; };
 		B44BF3B32989B9400002B220 /* Random.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Random.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B44BF3B62989B9400002B220 /* RandomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomApp.swift; sourceTree = "<group>"; };
 		B44BF3B82989B9400002B220 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -92,9 +97,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B417C363298AB87700E4BCB7 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				B417C364298AB88100E4BCB7 /* SceneDelegate.swift */,
+				B417C366298AB91A00E4BCB7 /* AppDelegate.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
 		B44BF3AA2989B9400002B220 = {
 			isa = PBXGroup;
 			children = (
+				B43C4626298ABE6700873D92 /* Random-Info.plist */,
 				B44BF3B52989B9400002B220 /* App */,
 				B44BF3CB2989B9400002B220 /* RandomTests */,
 				B44BF3B42989B9400002B220 /* Products */,
@@ -141,6 +156,7 @@
 		B44BF3E52989B97A0002B220 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B417C363298AB87700E4BCB7 /* Launch */,
 				B44BF3E82989BB700002B220 /* Networking */,
 				B44BF3E72989BB680002B220 /* Design */,
 				B44BF3EA2989BBC30002B220 /* MainView */,
@@ -367,6 +383,7 @@
 				B44BF3C02989B9400002B220 /* Persistence.swift in Sources */,
 				B4556C75298A8D9300492A10 /* DesignConstants.swift in Sources */,
 				B44BF3F92989CD200002B220 /* Page.swift in Sources */,
+				B417C367298AB91A00E4BCB7 /* AppDelegate.swift in Sources */,
 				B4556C7F298A96AE00492A10 /* UserListStore.swift in Sources */,
 				B44BF3F72989CC970002B220 /* RandomUserEndPoint.swift in Sources */,
 				B44BF3B92989B9400002B220 /* AppView.swift in Sources */,
@@ -375,6 +392,7 @@
 				B4556C78298A948500492A10 /* AppStore.swift in Sources */,
 				B44BF3FB2989CF1B0002B220 /* RandomUserError.swift in Sources */,
 				B4556C71298A8A8200492A10 /* UserView.swift in Sources */,
+				B417C365298AB88100E4BCB7 /* SceneDelegate.swift in Sources */,
 				B44BF3F32989BEFC0002B220 /* User.swift in Sources */,
 				B44BF3B72989B9400002B220 /* RandomApp.swift in Sources */,
 			);
@@ -526,7 +544,7 @@
 				DEVELOPMENT_TEAM = 9TH46F6KBN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "Random-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -536,7 +554,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.robot.Random;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.Random;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -555,7 +573,7 @@
 				DEVELOPMENT_TEAM = 9TH46F6KBN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "Random-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -565,7 +583,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.robot.Random;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.Random;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

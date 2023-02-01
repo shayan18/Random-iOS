@@ -9,9 +9,7 @@ import ComposableArchitecture
 import Microya
 import SwiftUI
 
-@available(iOS 14.0, *)
-@main
-struct RandomApp: App {
+struct RandomApp: View {
   let store: Store<AppState, AppAction>
   let env: AppEnv
   
@@ -38,9 +36,7 @@ struct RandomApp: App {
     )
   }
   
-  var body: some Scene {
-    WindowGroup {
+  var body: some View {
       AppView(store: store)
-    }
   }
 }
