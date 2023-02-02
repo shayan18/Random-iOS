@@ -16,6 +16,13 @@ struct AppView: View {
       Group {
         IfLetStore(
           store.scope(
+            state: \.offlineUserListState,
+            action: AppAction.offlineUserList(action:)
+          ),
+          then: OfflineUserListView.init(store:)
+        )
+        IfLetStore(
+          store.scope(
             state: \.userListState,
             action: AppAction.userList(action:)
           ),

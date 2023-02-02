@@ -8,9 +8,8 @@
 import ComposableArchitecture
 import Foundation
 import Microya
-import CoreData
 
-let userListReducer = AnyReducer<UserListState, UserListAction, AppEnv>() { state, action, env in
+let userListReducer = AnyReducer<UserListState, UserListAction,  AppEnv>() { state, action, env in
   switch action {
   case .onAppear:
     return .init(value: .retrieve)
@@ -36,7 +35,7 @@ let userListReducer = AnyReducer<UserListState, UserListAction, AppEnv>() { stat
     
     
   case .retrieveNextPageIfNeeded(currentItem: let item):
-    guard state.loadMoreContentIfNeeded(item: item) else { return .none }
+    guard state.loadMoreContentIfNeeded(id: item) else { return .none }
     state.page.num += 1
     
     return env.apiProvider
@@ -51,24 +50,12 @@ let userListReducer = AnyReducer<UserListState, UserListAction, AppEnv>() { stat
     case let .success(response):
       state.users.append(contentsOf: IdentifiedArrayOf(uniqueElements: response.results))
       
-      let context = env.offlineCacheStorage.context
-      for user in response.results {
-        let newUser = CachedUser(context: context)
-        newUser.id = user.id
-        newUser.name = user.name.first
-        newUser.lastname = user.name.last
-        newUser.email = user.email
-      }
-      env.offlineCacheStorage.save()
-      
-      return .init(value: .enableProgressIndicator(false))
+      return .merge(
+        .init(value: .enableProgressIndicator(false)),
+        .init(value: .saveRequestedUsers(users: response.results))
+      )
       
     case let .failure(error):
-      let context = env.offlineCacheStorage.context
-      let request = CachedUser.fetchRequest()
-      let offlineUsers = try! env.offlineCacheStorage.context.fetch(request)
-      state.cachedUsers = IdentifiedArrayOf(uniqueElements: offlineUsers)
-      
       state.errorMessage = AppError(error: error)?.title ?? ""
       
       return .init(value: .enableProgressIndicator(false))
@@ -85,10 +72,33 @@ let userListReducer = AnyReducer<UserListState, UserListAction, AppEnv>() { stat
     case .apiServerReachable, .none:
       state.serverStatus = true
     }
+    return .init(value: .checkOfflineMode)
+    
+  case .checkOfflineMode:
+    if !state.serverStatus {
+      return .init(value: .showOfflineView)
+    }
+    
+  case let .saveRequestedUsers(users):
+    let context = env.offlineCacheStorage.context
+    for user in users {
+      let newUser = CachedUser(context: context)
+      newUser.id = user.id
+      newUser.name = user.name.first
+      newUser.lastname = user.name.last
+      newUser.email = user.email
+    }
+    env.offlineCacheStorage.save()
     
   case .onDisappear:
-    return .cancel(id: Cancellable())
+    return .merge(
+      .cancel(id: Cancellable()),
+      .cancel(id: NetworkChangedPublisherId())
+    )
+    
+  case .showOfflineView:
+    break // Handler by parent reducer
   }
-  
   return .none
 }
+

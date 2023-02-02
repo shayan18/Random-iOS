@@ -27,32 +27,24 @@ struct UserListView: View {
             Spacer()
           }
         } else {
-          if viewStore.shouldShowOfflineView {
-            List(viewStore.cachedUsers, id: \.id) { user in
-              UserView(
-                state: .init(
-                  firstName: user.name!,
-                  lastName: user.lastname!,
-                  email: user.email!)
-              )
-            }
-          } else {
-            List(viewStore.users, id: \.id) { user in
-              UserView(
-                state: .init(
-                  firstName: user.name.first,
-                  lastName: user.name.last,
-                  email: user.email)
-              )
-              .onAppear {
-                viewStore.send(.retrieveNextPageIfNeeded(currentItem: user.id))
-              }
+          List(viewStore.users, id: \.id) { user in
+            UserView(
+              state: .init(
+                firstName: user.name.first,
+                lastName: user.name.last,
+                email: user.email)
+            )
+            .onAppear {
+              viewStore.send(.retrieveNextPageIfNeeded(currentItem: user.id))
             }
           }
         }
       }
       .onAppear {
         viewStore.send(.onAppear)
+      }
+      .onDisappear {
+        viewStore.send(.onDisappear)
       }
     }
   }

@@ -12,6 +12,9 @@
 		B4298513298BCBFE00E12752 /* OfflineCacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4298512298BCBFE00E12752 /* OfflineCacheStorage.swift */; };
 		B4298515298BE5A300E12752 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4298514298BE5A300E12752 /* Reachability.swift */; };
 		B4298517298BE85400E12752 /* NetworkChangedPublisherId.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4298516298BE85400E12752 /* NetworkChangedPublisherId.swift */; };
+		B429851C298BFA8F00E12752 /* OfflineUserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429851B298BFA8F00E12752 /* OfflineUserListView.swift */; };
+		B429851E298BFA9D00E12752 /* OfflineUserListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429851D298BFA9D00E12752 /* OfflineUserListReducer.swift */; };
+		B4298520298BFAA600E12752 /* OfflineUserListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429851F298BFAA600E12752 /* OfflineUserListStore.swift */; };
 		B44BF3B72989B9400002B220 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44BF3B62989B9400002B220 /* MainView.swift */; };
 		B44BF3B92989B9400002B220 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44BF3B82989B9400002B220 /* AppView.swift */; };
 		B44BF3BB2989B9400002B220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44BF3BA2989B9400002B220 /* Assets.xcassets */; };
@@ -58,6 +61,9 @@
 		B4298512298BCBFE00E12752 /* OfflineCacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineCacheStorage.swift; sourceTree = "<group>"; };
 		B4298514298BE5A300E12752 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		B4298516298BE85400E12752 /* NetworkChangedPublisherId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkChangedPublisherId.swift; sourceTree = "<group>"; };
+		B429851B298BFA8F00E12752 /* OfflineUserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineUserListView.swift; sourceTree = "<group>"; };
+		B429851D298BFA9D00E12752 /* OfflineUserListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineUserListReducer.swift; sourceTree = "<group>"; };
+		B429851F298BFAA600E12752 /* OfflineUserListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineUserListStore.swift; sourceTree = "<group>"; };
 		B43C4626298ABE6700873D92 /* Random-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Random-Info.plist"; sourceTree = "<group>"; };
 		B44BF3B32989B9400002B220 /* Random.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Random.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B44BF3B62989B9400002B220 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -118,6 +124,16 @@
 			path = Launch;
 			sourceTree = "<group>";
 		};
+		B429851A298BFA5E00E12752 /* OfflineUserListView */ = {
+			isa = PBXGroup;
+			children = (
+				B429851B298BFA8F00E12752 /* OfflineUserListView.swift */,
+				B429851D298BFA9D00E12752 /* OfflineUserListReducer.swift */,
+				B429851F298BFAA600E12752 /* OfflineUserListStore.swift */,
+			);
+			path = OfflineUserListView;
+			sourceTree = "<group>";
+		};
 		B44BF3AA2989B9400002B220 = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +190,7 @@
 				B44BF3EA2989BBC30002B220 /* MainView */,
 				B44BF3E92989BB7D0002B220 /* AppView */,
 				B4556C79298A966200492A10 /* UserListView */,
+				B429851A298BFA5E00E12752 /* OfflineUserListView */,
 				B4556C84298AAE9D00492A10 /* Global */,
 			);
 			path = Sources;
@@ -413,13 +430,16 @@
 				B4298517298BE85400E12752 /* NetworkChangedPublisherId.swift in Sources */,
 				B417C367298AB91A00E4BCB7 /* AppDelegate.swift in Sources */,
 				B4812A3D298AE77E008AE0F5 /* AppReducer.swift in Sources */,
+				B429851C298BFA8F00E12752 /* OfflineUserListView.swift in Sources */,
 				B4556C7F298A96AE00492A10 /* UserListStore.swift in Sources */,
 				B44BF3F72989CC970002B220 /* RandomUserEndPoint.swift in Sources */,
 				B4812A45298B22F1008AE0F5 /* ActivityIndicator.swift in Sources */,
 				B44BF3B92989B9400002B220 /* AppView.swift in Sources */,
 				B4556C7B298A967500492A10 /* UserListView.swift in Sources */,
 				B44BF3F52989BFE60002B220 /* ApiCollectionResponse.swift in Sources */,
+				B429851E298BFA9D00E12752 /* OfflineUserListReducer.swift in Sources */,
 				B4556C78298A948500492A10 /* AppStore.swift in Sources */,
+				B4298520298BFAA600E12752 /* OfflineUserListStore.swift in Sources */,
 				B44BF3FB2989CF1B0002B220 /* RandomUserError.swift in Sources */,
 				B4556C71298A8A8200492A10 /* UserView.swift in Sources */,
 				B417C365298AB88100E4BCB7 /* SceneDelegate.swift in Sources */,
@@ -632,7 +652,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9TH46F6KBN;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.robot.RandomTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -652,7 +672,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9TH46F6KBN;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.robot.RandomTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

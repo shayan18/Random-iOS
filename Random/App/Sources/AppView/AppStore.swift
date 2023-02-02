@@ -8,9 +8,11 @@ import Foundation
 
 struct AppState: Equatable {
   var userListState: UserListState?
+  var offlineUserListState: OfflineUserListState?
 }
 
 enum AppAction: Equatable {
   case didAppear
   case userList(action: UserListAction)
+  case offlineUserList(action: OfflineUserListAction)
 }
