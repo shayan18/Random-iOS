@@ -35,7 +35,7 @@ struct UserListView: View {
                 email: user.email)
             )
             .onAppear {
-              viewStore.send(.retrieveNextPageIfNeeded(currentItem: user.id))
+              viewStore.send(.retrieveNextPageIfNeeded(id: user.id))
             }
           }
         }

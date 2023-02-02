@@ -1,0 +1,18 @@
+{
+  "results": [
+    {
+      "name": {
+        "title": "Mrs",
+        "first": "Minea",
+        "last": "Jokela"
+      },
+      "email": "minea.jokela@example.com"
+    }
+  ],
+  "info": {
+    "seed": "c5fc8dc4d147acf6",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}

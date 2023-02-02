@@ -24,7 +24,7 @@ let userListReducer = AnyReducer<UserListState, UserListAction,  AppEnv>() { sta
         .map(UserListAction.networkChanged)
         .receive(on: env.mainQueue)
         .eraseToEffect()
-        .cancellable(id: NetworkChangedPublisherId()),
+        .cancellable(id: NetworkChangedPublisherId(), cancelInFlight: true),
       env.apiProvider
         .publisher(on: .index(.users, page: state.page, includes: []), decodeBodyTo: ApiCollectionResponse<User>.self)
         .receive(on: env.mainQueue)
@@ -34,8 +34,8 @@ let userListReducer = AnyReducer<UserListState, UserListAction,  AppEnv>() { sta
     )
     
     
-  case .retrieveNextPageIfNeeded(currentItem: let item):
-    guard state.loadMoreContentIfNeeded(id: item) else { return .none }
+  case let .retrieveNextPageIfNeeded(id):
+    guard state.loadMoreContentIfNeeded(id: id) else { return .none }
     state.page.num += 1
     
     return env.apiProvider
@@ -78,6 +78,8 @@ let userListReducer = AnyReducer<UserListState, UserListAction,  AppEnv>() { sta
     if !state.serverStatus {
       return .init(value: .showOfflineView)
     }
+    return
+      .cancel(id: NetworkChangedPublisherId())
     
   case let .saveRequestedUsers(users):
     let context = env.offlineCacheStorage.context
@@ -88,7 +90,10 @@ let userListReducer = AnyReducer<UserListState, UserListAction,  AppEnv>() { sta
       newUser.lastname = user.name.last
       newUser.email = user.email
     }
+    
     env.offlineCacheStorage.save()
+    return
+      .cancel(id: NetworkChangedPublisherId())
     
   case .onDisappear:
     return .merge(
@@ -101,4 +106,3 @@ let userListReducer = AnyReducer<UserListState, UserListAction,  AppEnv>() { sta
   }
   return .none
 }
-

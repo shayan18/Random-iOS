@@ -10,7 +10,6 @@ import Microya
 import XCTest
 
 final class RandomUsersApiTests: XCTestCase {
-
     func testFetchRandomUsersAttributes() throws {
         let usersResponseBody =
         try TestConstants.testApiProvider.performRequestAndWait(

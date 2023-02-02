@@ -16,7 +16,7 @@ struct UserListState: Equatable {
   var page = Page(num: 1, items: 20)
   var errorMessage: String = ""
   
-  func loadMoreContentIfNeeded(id: UUID) -> Bool  {
+  func loadMoreContentIfNeeded(id: String) -> Bool  {
     let thresholdIndex = users.index(users.endIndex, offsetBy: -5)
     return users.firstIndex(where: { $0.id == id }) == thresholdIndex
   }
@@ -25,7 +25,7 @@ struct UserListState: Equatable {
 enum UserListAction: Equatable {
   case onAppear
   case retrieve
-  case retrieveNextPageIfNeeded(currentItem: UUID)
+  case retrieveNextPageIfNeeded(id: String)
   case enableProgressIndicator(Bool)
   case checkOfflineMode
   case showOfflineView

@@ -14,9 +14,6 @@ final class OfflineCacheStorage {
   static let standard = OfflineCacheStorage()
   
   #if DEBUG
-    /// An in-memory database access for faster previews.
-    static var mocked: OfflineCacheStorage = .init(inMemory: true)
-
     /// An in-memory database access for faster tests that creates a new object on each call to start with empty data.
     static var test: OfflineCacheStorage { .init(inMemory: true) }
   #endif
@@ -40,7 +37,7 @@ final class OfflineCacheStorage {
 
     container.loadPersistentStores { _, error in
       if let error = error as NSError? {
-        // TODO: [cg_2021-11-19] replace the fatal error with an error log once a proper Logger is established
+        // TODO: replace the fatal error with an error log once a proper Logger is established
         fatalError("Could not load Core Data persistent stores. Error \(error), \(error.userInfo)")
       }
     }
@@ -54,7 +51,7 @@ final class OfflineCacheStorage {
       }
       catch {
         if let error = error as NSError? {
-          // TODO: [cg_2021-11-19] replace the fatal error with an error log once a proper Logger is established
+          // TODO: replace the fatal error with an error log once a proper Logger is established
           fatalError("Could not save context to Core Data. Error \(error), \(error.userInfo)")
         }
       }

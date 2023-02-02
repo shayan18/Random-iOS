@@ -10,7 +10,9 @@ import Foundation
 /// The user response object.
 struct User: Decodable, Equatable, Identifiable {
   /// The unique identifier for the given object. Required.
-  let id = UUID()
+  var id: String {
+    name.first + email
+  }
   
   /// The name of user.
   let name: Name
