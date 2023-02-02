@@ -134,6 +134,15 @@
 			path = OfflineUserListView;
 			sourceTree = "<group>";
 		};
+		B4298521298C4BF300E12752 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B4298512298BCBFE00E12752 /* OfflineCacheStorage.swift */,
+				B4298514298BE5A300E12752 /* Reachability.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		B44BF3AA2989B9400002B220 = {
 			isa = PBXGroup;
 			children = (
@@ -186,11 +195,12 @@
 			children = (
 				B417C363298AB87700E4BCB7 /* Launch */,
 				B44BF3E82989BB700002B220 /* Networking */,
-				B44BF3E72989BB680002B220 /* Design */,
+				B44BF3E72989BB680002B220 /* Design System */,
 				B44BF3EA2989BBC30002B220 /* MainView */,
 				B44BF3E92989BB7D0002B220 /* AppView */,
 				B4556C79298A966200492A10 /* UserListView */,
 				B429851A298BFA5E00E12752 /* OfflineUserListView */,
+				B4298521298C4BF300E12752 /* Helpers */,
 				B4556C84298AAE9D00492A10 /* Global */,
 			);
 			path = Sources;
@@ -205,14 +215,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		B44BF3E72989BB680002B220 /* Design */ = {
+		B44BF3E72989BB680002B220 /* Design System */ = {
 			isa = PBXGroup;
 			children = (
 				B4812A46298B2300008AE0F5 /* Representables */,
 				B4556C6F298A8A6700492A10 /* Components */,
 				B4556C76298A8E4600492A10 /* Shared */,
 			);
-			path = Design;
+			path = "Design System";
 			sourceTree = "<group>";
 		};
 		B44BF3E82989BB700002B220 /* Networking */ = {
@@ -231,8 +241,6 @@
 				B4556C77298A948500492A10 /* AppStore.swift */,
 				B4812A3C298AE77E008AE0F5 /* AppReducer.swift */,
 				B4556C80298A97A700492A10 /* AppEnv.swift */,
-				B4298512298BCBFE00E12752 /* OfflineCacheStorage.swift */,
-				B4298514298BE5A300E12752 /* Reachability.swift */,
 			);
 			path = AppView;
 			sourceTree = "<group>";
