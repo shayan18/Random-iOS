@@ -27,7 +27,7 @@ struct UserListView: View {
             Spacer()
           }
         } else {
-          if viewStore.users.isEmpty {
+          if viewStore.shouldShowOfflineView {
             List(viewStore.cachedUsers, id: \.id) { user in
               UserView(
                 state: .init(

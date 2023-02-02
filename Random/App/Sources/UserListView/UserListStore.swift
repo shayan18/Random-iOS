@@ -13,8 +13,13 @@ struct UserListState: Equatable {
   var users: IdentifiedArrayOf<User> = []
   var cachedUsers: IdentifiedArrayOf<CachedUser> = []
   var shouldShowProgressIndicator = false
+  var serverStatus: Bool = true
   var page = Page(num: 1, items: 20)
   var errorMessage: String = ""
+  
+  var shouldShowOfflineView: Bool {
+    return !cachedUsers.isEmpty && !serverStatus
+  }
   
   func loadMoreContentIfNeeded(item: UUID) -> Bool  {
     let thresholdIndex = users.index(users.endIndex, offsetBy: -5)
@@ -28,6 +33,7 @@ enum UserListAction: Equatable {
   case retrieveNextPageIfNeeded(currentItem: UUID)
   case enableProgressIndicator(Bool)
   case onDisappear
+  case networkChanged(networkState: Reachability.State?)
   case receivedUsersResponse(Result<ApiCollectionResponse<User>, ApiError<RandomUserError>>)
 }
 

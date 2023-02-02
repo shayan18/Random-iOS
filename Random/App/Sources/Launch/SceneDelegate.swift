@@ -29,12 +29,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let appEnv = AppEnv(
       mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
       apiProvider: ApiProvider<RandomUserEndPoint>(
-        baseUrl: baseUrl
+        baseUrl: baseUrl,
+        plugins: [Reachability.standard.stateChangePlugin()]
       ),
-      offlineCacheStorage: .standard
+      offlineCacheStorage: .standard,
+      reachability: .standard
     )
     
-    let store = Store(initialState: .init(), reducer: appReducer, environment: appEnv)
+    let store = Store(initialState: .init(),
+                      reducer: appReducer,
+                      environment: appEnv)
+
     let mainView = MainView(store: store)
     if let windowScene = scene as? UIWindowScene {
       let window = UIWindow(windowScene: windowScene)

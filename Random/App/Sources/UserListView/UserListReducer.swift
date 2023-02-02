@@ -21,6 +21,11 @@ let userListReducer = AnyReducer<UserListState, UserListAction, AppEnv>() { stat
     
     return .merge(
       .init(value: .enableProgressIndicator(true)),
+      EffectTask(env.reachability.networkChangedPublisher)
+        .map(UserListAction.networkChanged)
+        .receive(on: env.mainQueue)
+        .eraseToEffect()
+        .cancellable(id: NetworkChangedPublisherId()),
       env.apiProvider
         .publisher(on: .index(.users, page: state.page, includes: []), decodeBodyTo: ApiCollectionResponse<User>.self)
         .receive(on: env.mainQueue)
@@ -59,18 +64,27 @@ let userListReducer = AnyReducer<UserListState, UserListAction, AppEnv>() { stat
       return .init(value: .enableProgressIndicator(false))
       
     case let .failure(error):
-      if state.users.isEmpty {
-        let context = env.offlineCacheStorage.context
-       let request = CachedUser.fetchRequest()
-        let offlineUsers = try! env.offlineCacheStorage.context.fetch(request)
-        state.cachedUsers = IdentifiedArrayOf(uniqueElements: offlineUsers)
-      }
+      let context = env.offlineCacheStorage.context
+      let request = CachedUser.fetchRequest()
+      let offlineUsers = try! env.offlineCacheStorage.context.fetch(request)
+      state.cachedUsers = IdentifiedArrayOf(uniqueElements: offlineUsers)
+      
       state.errorMessage = AppError(error: error)?.title ?? ""
+      
       return .init(value: .enableProgressIndicator(false))
     }
     
   case let .enableProgressIndicator(isLoading):
     state.shouldShowProgressIndicator = isLoading
+    
+  case let .networkChanged(networkState):
+    switch networkState {
+    case .deviceOffline, .apiServerError, .apiServerUnreachable:
+      state.serverStatus = false
+      
+    case .apiServerReachable, .none:
+      state.serverStatus = true
+    }
     
   case .onDisappear:
     return .cancel(id: Cancellable())
