@@ -26,7 +26,7 @@ let userListReducer = AnyReducer<UserListState, UserListAction,  AppEnv>() { sta
         .eraseToEffect()
         .cancellable(id: NetworkChangedPublisherId(), cancelInFlight: true),
       env.apiProvider
-        .publisher(on: .index(.users, page: state.page, includes: []), decodeBodyTo: ApiCollectionResponse<User>.self)
+        .publisher(on: .index(.users, page: state.page, includes: state.includeParams), decodeBodyTo: ApiCollectionResponse<User>.self)
         .receive(on: env.mainQueue)
         .catchToEffect()
         .map { UserListAction.receivedUsersResponse($0)}
@@ -39,7 +39,7 @@ let userListReducer = AnyReducer<UserListState, UserListAction,  AppEnv>() { sta
     state.page.num += 1
     
     return env.apiProvider
-      .publisher(on: .index(.users, page: state.page, includes: []), decodeBodyTo: ApiCollectionResponse<User>.self)
+      .publisher(on: .index(.users, page: state.page, includes: state.includeParams), decodeBodyTo: ApiCollectionResponse<User>.self)
       .receive(on: env.mainQueue)
       .catchToEffect()
       .map { UserListAction.receivedUsersResponse($0)}

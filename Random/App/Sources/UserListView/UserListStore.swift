@@ -15,6 +15,7 @@ struct UserListState: Equatable {
   var serverStatus: Bool = false
   var page = Page(num: 1, items: 20)
   var errorMessage: String = ""
+  let includeParams: [String] = ["name","email"]
   
   func loadMoreContentIfNeeded(id: String) -> Bool  {
     let thresholdIndex = users.index(users.endIndex, offsetBy: -5)
