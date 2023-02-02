@@ -15,9 +15,6 @@ let userListReducer = AnyReducer<UserListState, UserListAction,  AppEnv>() { sta
     return .init(value: .retrieve)
     
   case .retrieve:
-    state.users = []
-    state.page.num = 1
-    
     return .merge(
       .init(value: .enableProgressIndicator(true)),
       EffectTask(env.reachability.networkChangedPublisher)
@@ -25,6 +22,7 @@ let userListReducer = AnyReducer<UserListState, UserListAction,  AppEnv>() { sta
         .receive(on: env.mainQueue)
         .eraseToEffect()
         .cancellable(id: NetworkChangedPublisherId(), cancelInFlight: true),
+      
       env.apiProvider
         .publisher(on: .index(.users, page: state.page, includes: state.includeParams), decodeBodyTo: ApiCollectionResponse<User>.self)
         .receive(on: env.mainQueue)
@@ -32,7 +30,6 @@ let userListReducer = AnyReducer<UserListState, UserListAction,  AppEnv>() { sta
         .map { UserListAction.receivedUsersResponse($0)}
         .cancellable(id: Cancellable(), cancelInFlight: true)
     )
-    
     
   case let .retrieveNextPageIfNeeded(id):
     guard state.loadMoreContentIfNeeded(id: id) else { return .none }
