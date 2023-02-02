@@ -11,6 +11,7 @@ import Foundation
 
 struct UserListState: Equatable {
   var users: IdentifiedArrayOf<User> = []
+  var cachedUsers: IdentifiedArrayOf<CachedUser> = []
   var shouldShowProgressIndicator = false
   var page = Page(num: 1, items: 20)
   var errorMessage: String = ""

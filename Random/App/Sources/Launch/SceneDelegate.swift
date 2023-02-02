@@ -30,7 +30,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
       apiProvider: ApiProvider<RandomUserEndPoint>(
         baseUrl: baseUrl
-      ))
+      ),
+      offlineCacheStorage: .standard
+    )
     
     let store = Store(initialState: .init(), reducer: appReducer, environment: appEnv)
     let mainView = MainView(store: store)

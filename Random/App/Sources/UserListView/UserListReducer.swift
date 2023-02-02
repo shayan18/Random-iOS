@@ -8,6 +8,7 @@
 import ComposableArchitecture
 import Foundation
 import Microya
+import CoreData
 
 let userListReducer = AnyReducer<UserListState, UserListAction, AppEnv>() { state, action, env in
   switch action {
@@ -44,9 +45,26 @@ let userListReducer = AnyReducer<UserListState, UserListAction, AppEnv>() { stat
     switch userResponse {
     case let .success(response):
       state.users.append(contentsOf: IdentifiedArrayOf(uniqueElements: response.results))
+      
+      let context = env.offlineCacheStorage.context
+      for user in response.results {
+        let newUser = CachedUser(context: context)
+        newUser.id = user.id
+        newUser.name = user.name.first
+        newUser.lastname = user.name.last
+        newUser.email = user.email
+      }
+      env.offlineCacheStorage.save()
+      
       return .init(value: .enableProgressIndicator(false))
       
     case let .failure(error):
+      if state.users.isEmpty {
+        let context = env.offlineCacheStorage.context
+       let request = CachedUser.fetchRequest()
+        let offlineUsers = try! env.offlineCacheStorage.context.fetch(request)
+        state.cachedUsers = IdentifiedArrayOf(uniqueElements: offlineUsers)
+      }
       state.errorMessage = AppError(error: error)?.title ?? ""
       return .init(value: .enableProgressIndicator(false))
     }

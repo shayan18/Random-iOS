@@ -27,15 +27,26 @@ struct UserListView: View {
             Spacer()
           }
         } else {
-          List(viewStore.users, id: \.id) { user in
-            UserView(
-              state: .init(
-                firstName: user.name.first,
-                lastName: user.name.last,
-                email: user.email)
-            )
-            .onAppear {
-              viewStore.send(.retrieveNextPageIfNeeded(currentItem: user.id))
+          if viewStore.users.isEmpty {
+            List(viewStore.cachedUsers, id: \.id) { user in
+              UserView(
+                state: .init(
+                  firstName: user.name!,
+                  lastName: user.lastname!,
+                  email: user.email!)
+              )
+            }
+          } else {
+            List(viewStore.users, id: \.id) { user in
+              UserView(
+                state: .init(
+                  firstName: user.name.first,
+                  lastName: user.name.last,
+                  email: user.email)
+              )
+              .onAppear {
+                viewStore.send(.retrieveNextPageIfNeeded(currentItem: user.id))
+              }
             }
           }
         }

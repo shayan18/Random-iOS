@@ -12,4 +12,5 @@ import Microya
 struct AppEnv {
   let mainQueue: AnySchedulerOf<DispatchQueue>
   let apiProvider: ApiProvider<RandomUserEndPoint>
+  let offlineCacheStorage: OfflineCacheStorage
 }
