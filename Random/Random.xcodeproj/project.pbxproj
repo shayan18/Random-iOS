@@ -49,6 +49,10 @@
 		B4556C7F298A96AE00492A10 /* UserListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4556C7E298A96AE00492A10 /* UserListStore.swift */; };
 		B4556C81298A97A700492A10 /* AppEnv.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4556C80298A97A700492A10 /* AppEnv.swift */; };
 		B4556C83298AAA1A00492A10 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4556C82298AAA1A00492A10 /* AppError.swift */; };
+		B45BFA7C298C872A00BE9984 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = B45BFA7B298C872A00BE9984 /* SnapshotTesting */; };
+		B45BFA7E298C874900BE9984 /* XCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BFA7D298C874900BE9984 /* XCTestCase.swift */; };
+		B45BFA81298C884600BE9984 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45BFA80298C884600BE9984 /* UserView.swift */; };
+		B45BFA83298C8A0000BE9984 /* __Snapshots__ in Resources */ = {isa = PBXBuildFile; fileRef = B45BFA82298C8A0000BE9984 /* __Snapshots__ */; };
 		B4812A3D298AE77E008AE0F5 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4812A3C298AE77E008AE0F5 /* AppReducer.swift */; };
 		B4812A3F298AF0F8008AE0F5 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4812A3E298AF0F8008AE0F5 /* AppConstants.swift */; };
 		B4812A41298AF224008AE0F5 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4812A40298AF224008AE0F5 /* Cancellable.swift */; };
@@ -109,6 +113,9 @@
 		B4556C7E298A96AE00492A10 /* UserListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListStore.swift; sourceTree = "<group>"; };
 		B4556C80298A97A700492A10 /* AppEnv.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnv.swift; sourceTree = "<group>"; };
 		B4556C82298AAA1A00492A10 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		B45BFA7D298C874900BE9984 /* XCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestCase.swift; sourceTree = "<group>"; };
+		B45BFA80298C884600BE9984 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		B45BFA82298C8A0000BE9984 /* __Snapshots__ */ = {isa = PBXFileReference; lastKnownFileType = folder; path = __Snapshots__; sourceTree = "<group>"; };
 		B4812A3C298AE77E008AE0F5 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		B4812A3E298AF0F8008AE0F5 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		B4812A40298AF224008AE0F5 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
@@ -129,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B45BFA7C298C872A00BE9984 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +198,7 @@
 				B429852C298C519400E12752 /* DataExt.swift */,
 				B4298522298C4F0C00E12752 /* AppEnvExt.swift */,
 				B4298541298C721F00E12752 /* StringExt.swift */,
+				B45BFA7D298C874900BE9984 /* XCTestCase.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,6 +259,7 @@
 		B44BF3CB2989B9400002B220 /* RandomTests */ = {
 			isa = PBXGroup;
 			children = (
+				B45BFA7F298C883400BE9984 /* SnapshotTests */,
 				B429853D298C707900E12752 /* Tests */,
 				B429853F298C70B400E12752 /* ApiTests */,
 				B429853E298C708600E12752 /* Extensions */,
@@ -380,6 +390,16 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
+		B45BFA7F298C883400BE9984 /* SnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				B45BFA82298C8A0000BE9984 /* __Snapshots__ */,
+				B45BFA80298C884600BE9984 /* UserView.swift */,
+			);
+			name = SnapshotTests;
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		B4812A46298B2300008AE0F5 /* Representables */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +446,9 @@
 				B44BF3CA2989B9400002B220 /* PBXTargetDependency */,
 			);
 			name = RandomTests;
+			packageProductDependencies = (
+				B45BFA7B298C872A00BE9984 /* SnapshotTesting */,
+			);
 			productName = RandomTests;
 			productReference = B44BF3C82989B9400002B220 /* RandomTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -461,6 +484,7 @@
 			packageReferences = (
 				B44BF3EB2989BD3E0002B220 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				B44BF3EE2989BD5E0002B220 /* XCRemoteSwiftPackageReference "Microya" */,
+				B45BFA7A298C872A00BE9984 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = B44BF3B42989B9400002B220 /* Products */;
 			projectDirPath = "";
@@ -486,6 +510,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B45BFA83298C8A0000BE9984 /* __Snapshots__ in Resources */,
 				B4298534298C554400E12752 /* UserPage1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B429852B298C50C200E12752 /* MockedJson.swift in Sources */,
+				B45BFA7E298C874900BE9984 /* XCTestCase.swift in Sources */,
 				B4298542298C721F00E12752 /* StringExt.swift in Sources */,
 				B4556C6C298A79A900492A10 /* RandomUsersApiTests.swift in Sources */,
 				B4298527298C4F6E00E12752 /* ApiProviderExt.swift in Sources */,
@@ -543,6 +569,7 @@
 				B429852D298C519400E12752 /* DataExt.swift in Sources */,
 				B429853C298C6A4400E12752 /* OfflineCacheStorageTests.swift in Sources */,
 				B4298525298C4F3700E12752 /* TestConstants.swift in Sources */,
+				B45BFA81298C884600BE9984 /* UserView.swift in Sources */,
 				B44BF3CD2989B9400002B220 /* UserListViewTests.swift in Sources */,
 				B4298529298C508800E12752 /* RandomUserEndPointExt.swift in Sources */,
 			);
@@ -820,6 +847,14 @@
 				minimumVersion = 0.7.0;
 			};
 		};
+		B45BFA7A298C872A00BE9984 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -832,6 +867,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B44BF3EE2989BD5E0002B220 /* XCRemoteSwiftPackageReference "Microya" */;
 			productName = Microya;
+		};
+		B45BFA7B298C872A00BE9984 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B45BFA7A298C872A00BE9984 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 
