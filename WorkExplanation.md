@@ -10,7 +10,7 @@ App consist of three layers
 - Networking (supports generic collection data models).
 - Main App (The main layer that consumes design components & network layer).
 
-![](https://www.dropbox.com/s/8a7r8w1pz40yhsu/Project%20random.png?dl=0)
+![](Random/Project-random.png)
 
 ## Explanation 
 I have demonstrated single responsiblity principle by creating separate layers of independent functionality i.e Views are used to represent only data and are kept stupid. User Actions are used to handle specific data mutation with pridictable code. User actions triggers respective case in reducer that changes state or start any outside world work. Dependency are kept centralised so that we can mock them while testing. 
