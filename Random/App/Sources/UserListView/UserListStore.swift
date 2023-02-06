@@ -18,7 +18,7 @@ struct UserListState: Equatable {
   let includeParams: [String] = ["name","email"]
   
   func loadMoreContentIfNeeded(id: String) -> Bool  {
-    let thresholdIndex = users.index(users.endIndex, offsetBy: -5)
+    let thresholdIndex = users.index(users.endIndex, offsetBy: -1)
     return users.firstIndex(where: { $0.id == id }) == thresholdIndex
   }
 }
