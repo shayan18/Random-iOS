@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B417C365298AB88100E4BCB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417C364298AB88100E4BCB7 /* SceneDelegate.swift */; };
 		B417C367298AB91A00E4BCB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B417C366298AB91A00E4BCB7 /* AppDelegate.swift */; };
+		B41E14E4299127D00017D703 /* UserPage2.json in Resources */ = {isa = PBXBuildFile; fileRef = B41E14E3299127D00017D703 /* UserPage2.json */; };
 		B4298513298BCBFE00E12752 /* OfflineCacheStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4298512298BCBFE00E12752 /* OfflineCacheStorage.swift */; };
 		B4298515298BE5A300E12752 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4298514298BE5A300E12752 /* Reachability.swift */; };
 		B429851C298BFA8F00E12752 /* OfflineUserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429851B298BFA8F00E12752 /* OfflineUserListView.swift */; };
@@ -72,6 +73,7 @@
 /* Begin PBXFileReference section */
 		B417C364298AB88100E4BCB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B417C366298AB91A00E4BCB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B41E14E3299127D00017D703 /* UserPage2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UserPage2.json; sourceTree = "<group>"; };
 		B4298512298BCBFE00E12752 /* OfflineCacheStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineCacheStorage.swift; sourceTree = "<group>"; };
 		B4298514298BE5A300E12752 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		B429851B298BFA8F00E12752 /* OfflineUserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineUserListView.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				B429852A298C50C200E12752 /* MockedJson.swift */,
 				B4298533298C554400E12752 /* UserPage1.json */,
+				B41E14E3299127D00017D703 /* UserPage2.json */,
 			);
 			path = MockedJson;
 			sourceTree = "<group>";
@@ -297,8 +300,8 @@
 		B44BF3E72989BB680002B220 /* Design System */ = {
 			isa = PBXGroup;
 			children = (
-				B4812A46298B2300008AE0F5 /* Representables */,
 				B4556C6F298A8A6700492A10 /* Components */,
+				B4812A46298B2300008AE0F5 /* Representables */,
 				B4556C76298A8E4600492A10 /* Shared */,
 			);
 			path = "Design System";
@@ -511,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B45BFA83298C8A0000BE9984 /* __Snapshots__ in Resources */,
+				B41E14E4299127D00017D703 /* UserPage2.json in Resources */,
 				B4298534298C554400E12752 /* UserPage1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

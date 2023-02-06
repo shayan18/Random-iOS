@@ -9,4 +9,5 @@ import Foundation
 
 enum MockedJson: String {
   case userPage1
+  case userPage2
 }

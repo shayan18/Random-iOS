@@ -31,6 +31,31 @@ final class UserListViewTests: XCTestCase {
     }
     
     store.receive(.saveRequestedUsers(users: ApiCollectionResponse(mockedJson: .userPage1).results))
+    
+  }
+  
+  func testFetchRandomUserPage2() {
+    var userListstate = UserListState()
+    var preFetchedUsers: IdentifiedArrayOf<User> =  IdentifiedArrayOf(uniqueElements: ApiCollectionResponse(mockedJson: .userPage1).results)
+    userListstate.users = preFetchedUsers
+    
+    let store = TestStore(initialState: userListstate, reducer: userListReducer, environment: .test)
+    
+    store.send(.retrieveNextPageIfNeeded(id: "testdemo@demo.com")) {
+      $0.page.num = 2
+    }
+    
+    TestConstants.scheduler.advance(by: TestConstants.requestDelay)
+    
+    store.receive(.receivedUsersResponse(.success(ApiCollectionResponse(mockedJson: .userPage2)))) {
+      
+      preFetchedUsers.append(contentsOf: IdentifiedArrayOf(uniqueElements: ApiCollectionResponse(mockedJson: .userPage2).results))
+      
+      $0.users =  preFetchedUsers
+    }
+    
+    store.receive(.enableProgressIndicator(false))
+    store.receive(.saveRequestedUsers(users: ApiCollectionResponse(mockedJson: .userPage2).results))
   }
 }
 

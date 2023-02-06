@@ -19,8 +19,18 @@ extension ApiProvider {
         scheduler: TestConstants.scheduler.eraseToAnyScheduler(),
         mockedResponseProvider: { endpoint in
           switch endpoint {
-          case .index(.users, _, _):
-            return endpoint.mock(status: .ok, mockedJson: .userPage1)
+          case let .index(.users, .some(page), _):
+            switch page.num {
+            case 1:
+              return endpoint.mock(status: .ok, mockedJson: .userPage1)
+            case 2:
+              return endpoint.mock(status: .ok, mockedJson: .userPage2)
+              
+            default:
+              return nil
+            }
+          default:
+            return nil
           }
         }
       )
